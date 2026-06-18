@@ -1,0 +1,6 @@
+{
+  "name": "809 Tons Project",
+  "description": "An interactive, premium dashboard exploring the Gold 809 Tons Project, covering wealth, aviation, technology, and national industries with a refined, light-toned luxury interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
