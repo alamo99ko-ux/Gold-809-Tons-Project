@@ -133,6 +133,47 @@ export default function App() {
     return () => clearInterval(interval);
   }, [isSimulating, simulationSpeed]);
 
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setActiveTab(id.replace("section-", ""));
+    }
+  };
+
+  useEffect(() => {
+    const sections = ["section-overview", "section-crew", "section-simulator", "section-history"];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          setActiveTab(id.replace("section-", ""));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   useEffect(() => {
     document.title = "Gold 809 Global Aviaion Aliilance";
   }, []);
@@ -141,56 +182,56 @@ export default function App() {
     <div className="min-h-screen bg-[#FDFCFB] text-[#2D2D2D] font-sans antialiased selection:bg-[#E5E0D8] selection:text-stone-900 pb-20">
       
       {/* Refined Natural Tones Header / Navigation */}
-      <header className="sticky top-0 z-50 bg-[#FDFCFB]/90 backdrop-blur-md border-b border-[#E5E0D8] transition-all">
-        <div className="max-w-7xl mx-auto px-12 py-6 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <div className="w-9 h-9 rounded-full bg-[#F5F2EE] border border-[#E5E0D8] flex items-center justify-center">
-              <Award className="w-5 h-5 text-[#8A7E6A]" />
+      <header className="sticky top-0 z-50 bg-[#FDFCFB]/95 backdrop-blur-md border-b border-[#E5E0D8] transition-all">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 md:py-6 flex flex-col md:flex-row gap-4 md:gap-0 justify-between items-center">
+          <div className="flex items-center gap-3 self-start md:self-auto">
+            <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-[#F5F2EE] border border-[#E5E0D8] flex items-center justify-center shrink-0">
+              <Award className="w-4.5 h-4.5 md:w-5 md:h-5 text-[#8A7E6A]" />
             </div>
             <div>
-              <div className="text-xs tracking-[0.1em] font-bold uppercase text-[#2D2D2D]">
+              <div className="text-[11px] md:text-xs tracking-[0.1em] font-bold uppercase text-[#2D2D2D] leading-tight">
                 Gold 809 Global Aviaion Aliilance
               </div>
-              <p className="text-[9px] text-amber-600 uppercase tracking-widest font-mono font-bold">809Tons of Gold  Aviaion Project</p>
+              <p className="text-[8px] md:text-[9px] text-amber-600 uppercase tracking-widest font-mono font-bold">809Tons of Gold  Aviaion Project</p>
             </div>
           </div>
 
-          <nav className="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-medium">
+          <nav className="flex items-center gap-4 sm:gap-6 md:gap-8 text-[10px] md:text-[11px] uppercase tracking-widest font-medium overflow-x-auto max-w-full pb-1 md:pb-0 scrollbar-none">
             <button 
-              onClick={() => setActiveTab("overview")}
-              className={`pb-1 transition-all duration-200 cursor-pointer ${
+              onClick={() => scrollToSection("section-overview")}
+              className={`pb-1 transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === "overview" 
-                  ? "border-b border-[#2D2D2D] text-[#2D2D2D]" 
+                  ? "border-b border-amber-600 font-bold text-[#2D2D2D]" 
                   : "opacity-40 hover:opacity-100 text-[#2D2D2D]"
               }`}
             >
               Overview
             </button>
             <button 
-              onClick={() => setActiveTab("crew")}
-              className={`pb-1 transition-all duration-200 cursor-pointer ${
+              onClick={() => scrollToSection("section-crew")}
+              className={`pb-1 transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === "crew" 
-                  ? "border-b border-[#2D2D2D] text-[#2D2D2D]" 
+                  ? "border-b border-amber-600 font-bold text-[#2D2D2D]" 
                   : "opacity-40 hover:opacity-100 text-[#2D2D2D]"
               }`}
             >
               Crew Fleet
             </button>
             <button 
-              onClick={() => setActiveTab("simulator")}
-              className={`pb-1 transition-all duration-200 cursor-pointer ${
+              onClick={() => scrollToSection("section-simulator")}
+              className={`pb-1 transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === "simulator" 
-                  ? "border-b border-[#2D2D2D] text-[#2D2D2D]" 
+                  ? "border-b border-amber-600 font-bold text-[#2D2D2D]" 
                   : "opacity-40 hover:opacity-100 text-[#2D2D2D]"
               }`}
             >
               Flight & Semiconductor Tech
             </button>
             <button 
-              onClick={() => setActiveTab("history")}
-              className={`pb-1 transition-all duration-200 cursor-pointer ${
+              onClick={() => scrollToSection("section-history")}
+              className={`pb-1 transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === "history" 
-                  ? "border-b border-[#2D2D2D] text-[#2D2D2D]" 
+                  ? "border-b border-amber-600 font-bold text-[#2D2D2D]" 
                   : "opacity-40 hover:opacity-100 text-[#2D2D2D]"
               }`}
             >
@@ -198,8 +239,8 @@ export default function App() {
             </button>
           </nav>
 
-          <div className="flex items-center gap-3">
-            <span className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-50 border border-[#E5E0D8] text-[9px] tracking-wider uppercase font-semibold text-[#2D2D2D]/70">
+          <div className="hidden lg:flex items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-50 border border-[#E5E0D8] text-[9px] tracking-wider uppercase font-semibold text-[#2D2D2D]/70">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               Live Core System
             </span>
@@ -291,7 +332,7 @@ export default function App() {
 
                 <div className="flex gap-2">
                   <button 
-                    onClick={() => setActiveTab("crew")}
+                    onClick={() => scrollToSection("section-crew")}
                     className="px-4 py-2 rounded-xl bg-[#2D2D2D] hover:bg-black text-white font-medium text-[11px] uppercase tracking-wider flex items-center gap-2 shadow-xs transition-colors cursor-pointer"
                   >
                     Explore Crew Fleet <ArrowRight className="w-3.5 h-3.5" />
@@ -303,9 +344,9 @@ export default function App() {
         </section>
 
         {/* Dynamic Navigation View Container */}
-        <div>
-          {activeTab === "overview" && (
-            <div className="space-y-8">
+        <div className="space-y-24">
+          
+          <section id="section-overview" className="scroll-mt-24 space-y-8">
               
               {/* Fact Card Detailer Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -583,11 +624,10 @@ export default function App() {
                 </div>
               </div>
 
-            </div>
-          )}
+            </section>
 
-          {activeTab === "crew" && (
-            <div className="space-y-8">
+            {/* 2. Crew Fleet Section */}
+            <section id="section-crew" className="scroll-mt-24 space-y-8">
               
               {/* Introduction to the flight crew */}
               <div className="bg-white rounded-3xl p-8 border border-[#eae2cf]">
@@ -626,11 +666,10 @@ export default function App() {
                 </div>
               </div>
 
-            </div>
-          )}
+            </section>
 
-          {activeTab === "simulator" && (
-            <div className="space-y-8">
+            {/* 3. Flight & Semiconductor Tech Section */}
+            <section id="section-simulator" className="scroll-mt-24 space-y-8">
               
               {/* Sim and Semiconductor Dashboard Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -775,11 +814,10 @@ export default function App() {
 
               </div>
 
-            </div>
-          )}
+            </section>
 
-          {activeTab === "history" && (
-            <div className="space-y-6">
+            {/* 4. Project Logs Section */}
+            <section id="section-history" className="scroll-mt-24 space-y-6">
               
               {/* Detailed Explanation on cleanup of duplicates and adjustments */}
               <div className="bg-white rounded-3xl p-8 border border-[#eae2cf] space-y-6">
@@ -848,9 +886,8 @@ export default function App() {
                 </div>
               </div>
 
-            </div>
-          )}
-        </div>
+            </section>
+          </div>
 
         {/* Dynamic bottom branding with Natural Tones */}
         <footer className="mt-16 border-t border-[#E5E0D8] pt-12 pb-8 bg-[#FDFCFB]">
