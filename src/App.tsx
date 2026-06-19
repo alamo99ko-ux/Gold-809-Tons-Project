@@ -265,7 +265,7 @@ export default function App() {
             <div className="lg:col-span-5 bg-[#F5F2EE] flex items-center justify-center p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#E5E0D8]">
               <div className="relative w-full max-w-[320px] aspect-[3/5] rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-stone-100 flex items-center justify-center group">
                 <img 
-                  src="/src/assets/images/gold_809tons_project_glamour_poster_1781862966615.jpg" 
+                  src={new URL("./assets/images/gold_809tons_project_glamour_poster_1781862966615.jpg", import.meta.url).href} 
                   alt="Gold 809 Tons Project Primary Poster" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-103"
                   referrerPolicy="no-referrer"
