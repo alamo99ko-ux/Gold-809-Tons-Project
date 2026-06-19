@@ -133,6 +133,10 @@ export default function App() {
     return () => clearInterval(interval);
   }, [isSimulating, simulationSpeed]);
 
+  useEffect(() => {
+    document.title = "Gold 809 Global Aviaion Aliilance";
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FDFCFB] text-[#2D2D2D] font-sans antialiased selection:bg-[#E5E0D8] selection:text-stone-900 pb-20">
       
@@ -144,10 +148,10 @@ export default function App() {
               <Award className="w-5 h-5 text-[#8A7E6A]" />
             </div>
             <div>
-              <div className="text-xs tracking-[0.3em] font-semibold uppercase opacity-70 text-[#2D2D2D]">
-                Aero Prestige Global
+              <div className="text-xs tracking-[0.1em] font-bold uppercase text-[#2D2D2D]">
+                Gold 809 Global Aviaion Aliilance
               </div>
-              <p className="text-[9px] text-stone-400 uppercase tracking-widest font-mono font-bold">809 TONS GOLD PROJECT</p>
+              <p className="text-[9px] text-amber-600 uppercase tracking-widest font-mono font-bold">809Tons of Gold  Aviaion Project</p>
             </div>
           </div>
 
@@ -553,7 +557,7 @@ export default function App() {
                     {/* Museum Frame Container */}
                     <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden border-4 border-stone-100 shadow-2xl group bg-stone-50">
                       <img 
-                        src="/src/assets/images/mega_synergy_poster_1781858043007.jpg" 
+                        src="/src/assets/images/skyking_synergy_poster_1781858950329.jpg" 
                         alt="809 Tons Gold Project Premium 9:16 Poster" 
                         className="w-full h-full object-cover transition-all duration-700 hover:scale-102"
                         referrerPolicy="no-referrer"
@@ -570,7 +574,7 @@ export default function App() {
                         
                         <div className="text-white">
                           <h4 className="font-serif text-base font-bold tracking-tight opacity-95">809 Tons Gold Project</h4>
-                          <p className="text-[9px] tracking-wider text-stone-300 font-light mt-0.5">AVIATION & WEALTH ALLIANCE</p>
+                          <p className="text-[9px] tracking-wider text-stone-300 font-light mt-0.5">Skyking Global Aviation Alliance</p>
                         </div>
                       </div>
                     </div>
