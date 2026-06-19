@@ -19,7 +19,8 @@ import {
   ArrowRight,
   ShieldCheck,
   Building,
-  Anchor
+  Anchor,
+  Coins
 } from "lucide-react";
 import { initialFacts, crewMembers, projectLogs } from "./data";
 import { FactCard, CrewMember, ProjectLog } from "./types";
@@ -279,7 +280,7 @@ export default function App() {
                     <div className="w-7 h-7 rounded-full bg-[#CBD5E0] border border-white text-stone-800 text-[9px] font-bold flex items-center justify-center shadow-xs">F3</div>
                   </div>
                   <div>
-                    <span className="text-xs font-semibold text-[#2D2D2D] block">정예 승무원 편대 배치</span>
+                    <span className="text-xs font-semibold text-[#2D2D2D] block">정예 경력 승무원 파견 배치</span>
                     <span className="text-[10px] text-stone-400 font-light">남자 수석사무장 1명 + 완연히 다른 고유 스타일 유니폼을 착용한 여성 승무원 2명</span>
                   </div>
                 </div>
@@ -528,6 +529,54 @@ export default function App() {
                   </div>
                 </div>
 
+              </div>
+
+              {/* 3. Mega 9:16 Synergy Poster Showcase */}
+              <div className="bg-[#FAF9F5] border border-[#E9E4D9] rounded-3xl p-6 lg:p-10 space-y-6 mt-4.5">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-[#E9E4D9]/80 pb-2">
+                  <div>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-[#b8860b] uppercase tracking-widest font-bold">
+                      <Sparkles className="w-3 h-3" /> Mega Synergy Grand Poster (9:16)
+                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-stone-900 mt-1">
+                      809TONs Gold Project 통합 비주얼 포스터 에디션
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center justify-center">
+                  
+                  {/* Outer Framed 9:16 Poster Card */}
+                  <div className="w-full max-w-[440px] flex flex-col items-center justify-center bg-white border border-[#E5E0D8] rounded-3xl p-6 md:p-8 shadow-md">
+                    <span className="text-[10px] text-stone-400 font-mono mb-4 uppercase tracking-widest">Premium Collection Artboard</span>
+                    
+                    {/* Museum Frame Container */}
+                    <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden border-4 border-stone-100 shadow-2xl group bg-stone-50">
+                      <img 
+                        src="/src/assets/images/mega_synergy_poster_1781858043007.jpg" 
+                        alt="809 Tons Gold Project Premium 9:16 Poster" 
+                        className="w-full h-full object-cover transition-all duration-700 hover:scale-102"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent pointer-events-none"></div>
+                      
+                      {/* Interactive Visual Anchors Overlay */}
+                      <div className="absolute inset-0 p-5 flex flex-col justify-between pointer-events-none bg-stone-900/5 hover:bg-transparent transition-all duration-500">
+                        <div className="flex justify-between items-start">
+                          <span className="bg-[#B4964B]/90 backdrop-blur-xs text-white text-[8px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-sm">
+                            AERO PRESTIGE CODE
+                          </span>
+                        </div>
+                        
+                        <div className="text-white">
+                          <h4 className="font-serif text-base font-bold tracking-tight opacity-95">809 Tons Gold Project</h4>
+                          <p className="text-[9px] tracking-wider text-stone-300 font-light mt-0.5">AVIATION & WEALTH ALLIANCE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
             </div>
