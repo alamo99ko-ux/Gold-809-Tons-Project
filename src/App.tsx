@@ -261,21 +261,35 @@ export default function App() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
-            {/* Visual Frame - Compact and Understated */}
-            <div className="lg:col-span-4 bg-[#F5F2EE] flex items-center justify-center p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-[#E5E0D8]">
-              <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-2 border-white shadow-md bg-stone-100 flex items-center justify-center">
+            {/* Visual Frame - Premium 3:5 Magnified Artboard for dramatic presence */}
+            <div className="lg:col-span-5 bg-[#F5F2EE] flex items-center justify-center p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#E5E0D8]">
+              <div className="relative w-full max-w-[320px] aspect-[3/5] rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-stone-100 flex items-center justify-center group">
                 <img 
-                  src="/src/assets/images/premium_hero_banner_1781763478890.jpg" 
-                  alt="809 Tons Gold Project Premium Hero" 
-                  className="w-full h-full object-cover grayscale-15 opacity-85 transition-all duration-700 hover:grayscale-0 hover:scale-105"
+                  src="/src/assets/images/gold_809tons_project_glamour_poster_1781862966615.jpg" 
+                  alt="Gold 809 Tons Project Primary 3:5 Poster" 
+                  className="w-full h-full object-cover transition-all duration-700 hover:scale-103"
                   referrerPolicy="no-referrer"
+                  id="hero-synergy-image"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2D2D2D]/10 to-transparent"></div>
+                
+                 {/* Semi-transparent dark grey capsule "850억 달러 (85 Billion USD)" at the top */}
+                <div className="absolute top-[4%] left-1/2 -translate-x-1/2 bg-black/45 backdrop-blur-[1.5px] border border-white/5 px-4 py-1.5 rounded-xl text-center shadow-lg w-[85%] max-w-[250px] pointer-events-none select-none">
+                  <span className="text-[10px] md:text-[11px] tracking-wide font-sans font-bold text-[#D4AF37]/35 drop-shadow-[0_0.5px_1px_rgba(0,0,0,0.85)]">
+                    850억 달러 (85 Billion USD)
+                  </span>
+                </div>
+
+                {/* Semi-transparent dark grey capsule "129조원" at the bottom */}
+                <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 bg-black/45 backdrop-blur-[1.5px] border border-white/5 px-5 py-2 rounded-xl text-center shadow-lg w-[65%] max-w-[180px] pointer-events-none select-none">
+                  <span className="text-[13px] md:text-[15px] tracking-widest font-serif font-black text-[#D4AF37]/35 drop-shadow-[0_0.5px_1px_rgba(0,0,0,0.95)]">
+                    129조원
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Content Details (Extremely light-toned and sophisticated) */}
-            <div className="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-between bg-[#FDFCFB]">
+            <div className="lg:col-span-7 p-8 lg:p-12 flex flex-col justify-between bg-[#FDFCFB]">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-1.5 bg-[#F5F2EE] border border-[#E5E0D8] py-1 px-3 rounded-full text-[10px] tracking-wider uppercase font-semibold text-[#8A7E6A]">
                   <Award className="w-3.5 h-3.5" /> High-Asset Innovation Protocol
