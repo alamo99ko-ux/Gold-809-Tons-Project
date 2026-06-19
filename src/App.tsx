@@ -261,12 +261,12 @@ export default function App() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
-            {/* Visual Frame - Premium 3:5 Magnified Artboard for dramatic presence */}
+            {/* Visual Frame - Premium Artboard for dramatic presence */}
             <div className="lg:col-span-5 bg-[#F5F2EE] flex items-center justify-center p-6 lg:p-10 border-b lg:border-b-0 lg:border-r border-[#E5E0D8]">
               <div className="relative w-full max-w-[320px] aspect-[3/5] rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-stone-100 flex items-center justify-center group">
                 <img 
                   src="/src/assets/images/gold_809tons_project_glamour_poster_1781862966615.jpg" 
-                  alt="Gold 809 Tons Project Primary 3:5 Poster" 
+                  alt="Gold 809 Tons Project Primary Poster" 
                   className="w-full h-full object-cover transition-all duration-700 hover:scale-103"
                   referrerPolicy="no-referrer"
                   id="hero-synergy-image"
@@ -535,108 +535,7 @@ export default function App() {
 
               </div>
 
-              {/* Premium Project Poster Displays */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                {/* 1. Official Theme Poster */}
-                <div className="bg-white border border-[#eae2cf] rounded-3xl overflow-hidden p-6 space-y-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-[10px] text-[#b8860b] uppercase tracking-widest font-bold">Concept Poster A</span>
-                      <h3 className="font-serif text-lg font-bold text-stone-900 mt-0.5">통합 이니셔티브 캐릭터 포스터</h3>
-                      <p className="text-[11px] text-stone-500 font-light">Global Express 8000, 에어 앰뷸런스, 정예 객실 크루가 직관적인 레이아웃으로 융합된 전경.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="relative aspect-[16/offset] aspect-video w-full rounded-xl overflow-hidden border border-stone-200 shadow-xs group">
-                    <img 
-                      src="/src/assets/images/project_poster_banner_1781765275051.jpg" 
-                      alt="Premium Project Travel Poster Art" 
-                      className="w-full h-full object-cover transition-all duration-700 hover:scale-102"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/30 via-transparent to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-3 left-4 right-4 text-white text-[9px] tracking-wider uppercase font-semibold flex items-center justify-between pointer-events-none opacity-90">
-                      <span>Airlines Crew & Logistics Hub</span>
-                      <span>© Aero Prestige Artworks</span>
-                    </div>
-                  </div>
-                </div>
 
-                {/* 2. Advanced Technology & Wealth Fusion Poster */}
-                <div className="bg-white border border-[#eae2cf] rounded-3xl overflow-hidden p-6 space-y-4">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-[10px] text-[#b8860b] uppercase tracking-widest font-bold">Concept Poster B</span>
-                      <h3 className="font-serif text-lg font-bold text-stone-900 mt-0.5">초정밀 반도체 및 골드 웰스 아트</h3>
-                      <p className="text-[11px] text-stone-500 font-light">비즈니스 제트기 비행, 골드바의 든든한 가치, 그리고 지능형 마이크로칩 밴드가 결합된 에디션.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="relative aspect-[16/offset] aspect-video w-full rounded-xl overflow-hidden border border-stone-200 shadow-xs group">
-                    <img 
-                      src="/src/assets/images/premium_conceptual_poster_1781765406982.jpg" 
-                      alt="Advanced Technology & Wealth Fusion Poster" 
-                      className="w-full h-full object-cover transition-all duration-700 hover:scale-102"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-900/30 via-transparent to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-3 left-4 right-4 text-white text-[9px] tracking-wider uppercase font-semibold flex items-center justify-between pointer-events-none opacity-90">
-                      <span>Gold & Semiconductor Core Synergy</span>
-                      <span>© Aero Prestige Artworks</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* 3. Mega 9:16 Synergy Poster Showcase */}
-              <div className="bg-[#FAF9F5] border border-[#E9E4D9] rounded-3xl p-6 lg:p-10 space-y-6 mt-4.5">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-[#E9E4D9]/80 pb-2">
-                  <div>
-                    <span className="inline-flex items-center gap-1 text-[10px] text-[#b8860b] uppercase tracking-widest font-bold">
-                      <Sparkles className="w-3 h-3" /> Mega Synergy Grand Poster (9:16)
-                    </span>
-                    <h3 className="font-serif text-2xl font-bold text-stone-900 mt-1">
-                      809TONs Gold Project 통합 비주얼 포스터 에디션
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-center justify-center">
-                  
-                  {/* Outer Framed 9:16 Poster Card */}
-                  <div className="w-full max-w-[440px] flex flex-col items-center justify-center bg-white border border-[#E5E0D8] rounded-3xl p-6 md:p-8 shadow-md">
-                    <span className="text-[10px] text-stone-400 font-mono mb-4 uppercase tracking-widest">Premium Collection Artboard</span>
-                    
-                    {/* Museum Frame Container */}
-                    <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden border-4 border-stone-100 shadow-2xl group bg-stone-50">
-                      <img 
-                        src="/src/assets/images/skyking_synergy_poster_1781858950329.jpg" 
-                        alt="809 Tons Gold Project Premium 9:16 Poster" 
-                        className="w-full h-full object-cover transition-all duration-700 hover:scale-102"
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent pointer-events-none"></div>
-                      
-                      {/* Interactive Visual Anchors Overlay */}
-                      <div className="absolute inset-0 p-5 flex flex-col justify-between pointer-events-none bg-stone-900/5 hover:bg-transparent transition-all duration-500">
-                        <div className="flex justify-between items-start">
-                          <span className="bg-[#B4964B]/90 backdrop-blur-xs text-white text-[8px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-sm">
-                            AERO PRESTIGE CODE
-                          </span>
-                        </div>
-                        
-                        <div className="text-white">
-                          <h4 className="font-serif text-base font-bold tracking-tight opacity-95">809 Tons Gold Project</h4>
-                          <p className="text-[9px] tracking-wider text-stone-300 font-light mt-0.5">Skyking Global Aviation Alliance</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
 
             </section>
 
